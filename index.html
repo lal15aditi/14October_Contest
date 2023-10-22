@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Homes & Apartment Rentals - Airbnb</title>
+
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/2111/2111320.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <div class="main">
+        <div class="head">
+            <!-- navbar -->
+            <div class="header">
+                <div class="navbar">
+                    <!-- logo and toggle button box -->
+                    <div class="logo-toggle-box">
+                        <!-- logo-box -->
+                        <a href="" class="brand-logo">
+                            <img src="./Icons/logo.png" alt="">
+                        </a>
+        
+                        <!-- toggle open btn -->
+                        <div class="toggle-open-btn">
+                            <span class="material-symbols-outlined">menu</span>
+                        </div>
+        
+                        <!-- toggle close btn -->
+                        <div class="toggle-close-btn d-none">
+                            <span class="material-symbols-outlined">close</span>
+                        </div>
+                    </div>
+        
+                    <!-- navbar main content -->
+                    <div class="nav-container d-none">
+                        <!-- menu box -->
+                        <div class="menu-box">
+                            <a href="" class="nav-menu nav-active">
+                                Places to stay
+                                <div class="underline"></div>
+                            </a>
+                            <a href="" class="nav-menu">
+                                Experiences
+                                <div class="underline"></div>
+                            </a>
+                            <a href="" class="nav-menu">
+                                Online Experiences
+                                <div class="underline"></div>
+                            </a>
+                        </div>
+                        
+                        <!-- host menu -->
+                        <a href="" class="host-menu">Become a Host</a>
+
+                        <!-- globe menu -->
+                        <a href="" class="globe-menu">
+                            <span class="material-symbols-outlined">language</span>
+                        </a>
+
+                        <!-- profile menu -->
+                        <div class="profile-menu div-btn-light">
+                            <img src="./Icons/menu.png" alt="">
+                            <img src="./Icons/profile.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- search bar -->
+            <div class="search-bar">
+                <div class="search-card">
+                    <b class="search-title">Location</b>
+                    <!-- <p class="search-detail search-location">Where are you going?</p> -->
+                    <input type="text" name="loc" id="loc" class="search-detail" placeholder="Where are you going?">
+                </div>
+                <div class="verticle-line"></div>
+                <div class="search-card">
+                    <b class="search-title">Check in</b>
+                    <!-- <p class="search-detail search-check-in">Add dates</p> -->
+                    <input type="date" name="date" id="date" class="search-detail" placeholder="Add dates">
+                </div>
+                <div class="verticle-line"></div>
+                <div class="search-card">
+                    <b class="search-title">Check out</b>
+                    <!-- <p class="search-detail search-check-out">Add dates</p> -->
+                    <input type="date" name="date" id="date" class="search-detail" placeholder="Add dates">
+                </div>
+                <div class="verticle-line"></div>
+                <div class="search-card" onclick="addGuests()">
+                    <b class="search-title">Guests</b>
+                    <p class="search-detail guest-data">Add guests</p>
+                    <div class="guests-dropdown d-none">
+                        <div class="guest-ip-group">
+                            Adults: 
+                            <input type="number" name="adults" id="adults" class="adults guest-ip">
+                        </div>
+                        <div class="guest-ip-group">
+                            Children: 
+                            <input type="number" name="children" id="children" class="children guest-ip">
+                        </div>
+                        <div class="guest-ip-group">
+                            Infants: 
+                            <input type="number" name="infants" id="infants" class="infants guest-ip">
+                        </div>
+                        <div class="guest-ip-group">
+                            Pets: 
+                            <input type="number" name="pets" id="pets" class="pets guest-ip">
+                        </div>
+                        <div class="add-guest" onclick="setGuest(this)">Add</div>
+                    </div>
+                </div>
+                <div class="search-btn div-btn-dark" onclick="transferData()">
+                    <img src="./Icons/search.png" alt="">
+                </div>
+            </div>
+
+            <div class="hero center-1">
+                <img src="./Icons/banner.png" alt="">
+                <div class="hero-content">
+                    <p>Not sure where to go? Perfect.</p>
+                    <div class="content-btn">I’m flexible</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- next trip -->
+        <div class="next-trip center-1">
+            <h1 class="section-head">Inspiration for your next trip</h1>
+            <div class="nt-container">
+                <div class="nt-card">
+                    <div class="nt-img-box">
+                        <img src="./Icons/ville.png" alt="">
+                    </div>
+                    <div class="nt-card-content">
+                        <p class="nt-card-title">Nashville</p>
+                        <p class="nt-card-distance">53 miles away</p>
+                    </div>
+                </div>
+                <div class="nt-card">
+                    <div class="nt-img-box">
+                        <img src="./Icons/haven-buffalo.png" alt="">
+                    </div>
+                    <div class="nt-card-content">
+                        <p class="nt-card-title">Nashville</p>
+                        <p class="nt-card-distance">53 miles away</p>
+                    </div>
+                </div>
+                <div class="nt-card">
+                    <div class="nt-img-box">
+                        <img src="./Icons/stanton.png" alt="">
+                    </div>
+                    <div class="nt-card-content">
+                        <p class="nt-card-title">Nashville</p>
+                        <p class="nt-card-distance">53 miles away</p>
+                    </div>
+                </div>
+                <div class="nt-card">
+                    <div class="nt-img-box">
+                        <img src="./Icons/haven-buffalo.png" alt="">
+                    </div>
+                    <div class="nt-card-content">
+                        <p class="nt-card-title">Nashville</p>
+                        <p class="nt-card-distance">53 miles away</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- discover-content -->
+        <div class="discover center-1">
+            <h1 class="section-head">Discover Airbnb Experiences</h1>
+            <div class="discover-container">
+                <div class="discover-left">
+                    <img src="./Icons/to-do-trip.png" alt="">
+                    <div class="discover-content">
+                        <p>Things to do</p>
+                        <p>on your trip</p>
+                        <div class="discover-btn content-btn div-btn-dark">Experiances</div>
+                    </div>
+                </div>
+                <div class="discover-right">
+                    <img src="./Icons/to-do-home.png" alt="">
+                    <div class="discover-content">
+                        <p>Things to do</p>
+                        <p>from home</p>
+                        <div class="discover-btn content-btn div-btn-dark">Online Experiances</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- gift cards -->
+        <div class="gift center-1">
+            <div class="gift-content">
+                <p>Shop Airbnb</p>
+                <p>gift cards</p>
+                <div class="gift-btn content-btn div-btn-dark">Learn more</div>
+            </div>
+            <div class="gift-cards">
+                <img src="./Icons/Gift Cards.png" alt="">
+            </div>
+        </div>
+
+        <!-- hosting -->
+        <div class="hosting center-1">
+            <img src="./Icons/que-hosting.png" alt="">
+            <div class="hosting-content">
+                <p>Questions</p>
+                <p>about</p>
+                <p>hosting?</p>
+                <div class="ask-btn content-btn div-btn-light">
+                    Ask a Superhost
+                </div>
+            </div>
+        </div>
+
+        <!-- gataways -->
+        <div class="gataways center-1">
+            <h1 class="section-head">Inspiration for future getaways</h1>
+            <div class="gataways-menu-box">
+                <div class="gataways-menu gataways-active">Destinations for arts & culture</div>
+                <div class="gataways-menu">Destinations for outdoor adventure</div>
+                <div class="gataways-menu">Mountain cabins</div>
+                <div class="gataways-menu">Beach destinations</div>
+                <div class="gataways-menu">Popular destinations</div>
+                <div class="gataways-menu">Unique Stays</div>
+            </div>
+            <div class="gataways-grid">
+                <div class="gataways-card">
+                    <p><b>Phoenix</b></p>
+                    <p>Arizona</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Hot Springs</b></p>
+                    <p>Arkansas</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Los Angeles</b></p>
+                    <p>California</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>San Diego</b></p>
+                    <p>California</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>San Francisco</b></p>
+                    <p>California</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Barcelona</b></p>
+                    <p>Catalonia</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Prague</b></p>
+                    <p>Czechia</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Washington</b></p>
+                    <p>District of Columbia</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Keswick</b></p>
+                    <p>England</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>London</b></p>
+                    <p>England</p>
+                </div>
+                <div class="gataways-card">
+                    <p><b>Scarborough</b></p>
+                    <p>England</p>
+                </div>
+                <div class="more-gataways gataways-card">Show more</div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-2">
+            <div class="footer-2-grid">
+                <div class="support footer-2-col">
+                    <p>Support</p>
+                    <p>Help Center</p>
+                    <p>Safety information</p>
+                    <p>Cancellation options</p>
+                    <p>Our COVID-19 Response</p>
+                    <p>Supporting people with disabilities</p>
+                    <p>Report a neighborhood concern</p>
+                </div>
+                <div class="community footer-2-col">
+                    <p>Community</p>
+                    <p>Airbnb.org: disaster relief housing</p>
+                    <p>Support: Afghan refugees</p>
+                    <p>Celebrating diversity & belonging</p>
+                    <p>Combating discrimination</p>
+                </div>
+                <div class="footer-2-col">
+                    <p>Hosting</p>
+                    <p>Try hosting</p>
+                    <p>AirCover: protection for Hosts</p>
+                    <p>Explore hosting resources</p>
+                    <p>Visit our community forum</p>
+                    <p>How to host responsibly</p>
+                </div>
+                <div class="about footer-2-col">
+                    <p>About</p>
+                    <p>Newsroom</p>
+                    <p>Learn about new features</p>
+                    <p>Learn from our founders</p>
+                    <p>Careers</p>
+                    <p>Investors</p>
+                    <p>Airbnb Luxe</p>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="copyright">
+                <div class="left">
+                    <p>© 2022 Airbnb, Inc.</p>
+                    <ul>
+                        <li>Privacy</li>
+                        <li>Terms</li>
+                        <li>Sitemap</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="eng-usd">
+                        <div class="eng">
+                            <div class="eng-img div-btn">
+                                <img src="./Icons/black_globe.png" alt="">
+                            </div>
+                            <p>English (US)</p>
+                        </div>
+                        <div class="usd">
+                            <div class="usd-img div-btn">
+                                <img src="./Icons/dollar.png" alt="">
+                            </div>
+                            <p>USD</p>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href="" class="social-img">
+                            <img src="./Icons/fb.png" alt="">
+                        </a>
+                        <a href="" class="social-img">
+                            <img src="./Icons/twitter.png" alt="">
+                        </a>
+                        <a href="" class="social-img">
+                            <img src="./Icons/insta.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
