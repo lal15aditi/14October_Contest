@@ -26,7 +26,7 @@ document.querySelector('.details-features').innerText = `${data.persons} guests 
 document.querySelector('.right-header>p>span').innerText = '$'+data.price.rate;
 document.querySelector('.right-header>:last-child').innerHTML = `
     <img src="./Icons/red-star.png" alt="">
-    ${data.rating} · <u>${data.reviewsCount} reviews</u>
+    ${data.rating?data.rating:'No rating'} · <u>${data.reviewsCount} reviews</u>
 `;
 
 
