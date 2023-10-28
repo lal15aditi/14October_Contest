@@ -112,7 +112,7 @@ function randerHotels(data){
                         <p>(${e.reviewsCount} reviews)</p>
                     </div>
                     <div class="price">
-                        <p>$${e.price.total}</p>
+                        <p>$${e.price.rate}</p>
                         <p>/night</p>
                         <span class="btn-description">Cost Breakdown</span>
                     </div>
